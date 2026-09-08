@@ -6,6 +6,8 @@ import { ComponentProxy } from './proxy/component-proxy';
 import { AssetProxy } from './proxy/asset-proxy';
 import { EngineProxy } from './proxy/engine-proxy';
 import { PrefabProxy } from './proxy/prefab-proxy';
+import { ReflectionProbeProxy } from './proxy/reflection-probe-proxy';
+import { reflectionProbeRenderer } from './reflection-probe-renderer';
 import { ReferenceImageProxy } from './proxy/reference-image-proxy';
 import { PreviewProxy } from './proxy/preview-proxy';
 import { ParticleProxy } from './proxy/particle-proxy';
@@ -22,6 +24,7 @@ export interface IMainModule {
     'programming': typeof scriptManager;
     'sceneConfigInstance': typeof sceneConfigInstance;
     'i18n': typeof i18n;
+    'reflectionProbeRenderer': typeof reflectionProbeRenderer;
     'referenceImageFiles': typeof referenceImageFiles;
     'referenceImageStore': typeof referenceImageStore;
 }
@@ -40,6 +43,7 @@ export const Scene = {
     Node: NodeProxy,
     // 组件相关的接口
     Component: ComponentProxy,
+    ReflectionProbe: ReflectionProbeProxy,
     // 场景进程
     worker: sceneWorker,
 };
